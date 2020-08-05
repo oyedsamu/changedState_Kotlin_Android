@@ -1,9 +1,13 @@
 package com.byoyedele.changedstate
 
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
     var portraitCount = 0
@@ -11,12 +15,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        this.text_current_state.text = "onCreate"
+        var run = Runnable {
+            this.text_current_state.text = "onCreate"
+        }
+        var hand = Handler()
+        hand.postDelayed(run, 1200)
+
+        var imp2 = findViewById<Button>(R.id.implementation_2)
+        imp2.setOnClickListener{
+            var intent = Intent(this, fragmentActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onStart() {
         super.onStart()
-        this.text_current_state.text = "onStart"
+        var run = Runnable {
+            this.text_current_state.text = "onStart"
+        }
+        var hand = Handler()
+        hand.postDelayed(run, 1200)
+
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
@@ -42,17 +61,29 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        this.text_current_state.text = "onResume"
+        var run = Runnable {
+            this.text_current_state.text = "onResume"
+        }
+        var hand = Handler()
+        hand.postDelayed(run, 1200)
     }
 
     override fun onPause() {
         super.onPause()
-        this.text_current_state.text = "onPause"
+        var run = Runnable {
+            this.text_current_state.text = "onPause"
+        }
+        var hand = Handler()
+        hand.postDelayed(run, 1200)
     }
 
     override fun onStop() {
         super.onStop()
-        this.text_current_state.text = "onStop"
+        var run = Runnable {
+            this.text_current_state.text = "onStop"
+        }
+        var hand = Handler()
+        hand.postDelayed(run, 1200)
 
     }
 
@@ -72,11 +103,21 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        this.text_current_state.text = "onDestroy"
+        var run = Runnable {
+            this.text_current_state.text = "onDestroy"
+        }
+        var hand = Handler()
+        hand.postDelayed(run, 1200)
     }
 
     override fun onRestart() {
         super.onRestart()
-        this.text_current_state.text = "onRestart"
+        var run = Runnable {
+            this.text_current_state.text = "onRestart"
+        }
+        var hand = Handler()
+        hand.postDelayed(run, 1200)
+
     }
+
 }

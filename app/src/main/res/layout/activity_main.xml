@@ -49,4 +49,13 @@
         app:layout_constraintVertical_bias="0.411"
         tools:text="The current orientation is Portrait" />
 
+    <Button
+        android:id="@+id/implementation_2"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Implementation 2"
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="413dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
